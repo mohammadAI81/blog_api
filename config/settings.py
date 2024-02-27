@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rest_framework',
+    'account.apps.AccountConfig',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
+        'NAME': 'blog_api',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'mohammad'

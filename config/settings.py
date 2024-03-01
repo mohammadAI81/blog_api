@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rest_framework',
     'accounts.apps.AccountConfig',
+    'page.apps.PageConfig',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -56,7 +57,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR.joinpath('templates'),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

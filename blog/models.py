@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth import get_user_model
 
 
 class Blog(models.Model):
@@ -8,7 +8,7 @@ class Blog(models.Model):
         ('drf', 'Draft',)
     ]
 
-    author = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(to=get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     text = models.TextField()
     published = models.CharField(default='pub', max_length=3, choices=CHOISE)
@@ -19,7 +19,7 @@ class Blog(models.Model):
     
 
 class Comment(models.Model):
-    author_comment = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author_comment = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     email = models.EmailField(blank=True, null=True)
     post = models.ForeignKey(Blog, on_delete=models.CASCADE)
     comment_text = models.TextField()

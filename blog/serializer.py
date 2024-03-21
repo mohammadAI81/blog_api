@@ -9,7 +9,7 @@ class BlogSerializer(ModelSerializer):
     
     class Meta:
         model = Blog
-        fields = ['author', 'title', 'text', 'published']
+        fields = ['id', 'author', 'title', 'text', 'published']
 
 
 class CommetSerializer(ModelSerializer):

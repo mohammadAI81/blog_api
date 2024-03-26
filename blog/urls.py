@@ -1,8 +1,11 @@
 from django.urls import path
+from rest_framework import routers
 
 from . import views
 
+
+
 urlpatterns = [
-    path('', views.blogs, name='blogs'),
-    path('<int:pk>/', views.detail_blog, name='edit_blog'),
+    path('', views.Blogs.as_view(), name='blogs'),
+    path('<int:pk>/', views.DetailBlog.as_view(), name='edit_blog'),
 ]
